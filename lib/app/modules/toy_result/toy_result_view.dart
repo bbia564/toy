@@ -11,7 +11,7 @@ class ToyResultView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.schamberger.value
+          () => controller.ward.value
               ? const CircularProgressIndicator(color: Colors.deepPurpleAccent)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class ToyResultView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.bocifhde();
+              controller.fserx();
             },
             icon: const Icon(
               Icons.restart_alt,

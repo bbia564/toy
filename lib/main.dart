@@ -8,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:toy_manager/utils/app_cauas.dart';
 import 'package:toy_manager/utils/app_util.dart';
 import 'package:toy_manager/utils/color_tool.dart';
 
@@ -25,6 +26,8 @@ import 'app/modules/toy_buy_page/bindings/toy_buy_page_binding.dart';
 import 'app/modules/toy_buy_page/views/toy_buy_page_view.dart';
 import 'app/modules/toy_manager_page/bindings/toy_manager_page_binding.dart';
 import 'app/modules/toy_manager_page/views/toy_manager_page_view.dart';
+import 'app/modules/toy_result/toy_result_binding.dart';
+import 'app/modules/toy_result/toy_result_view.dart';
 
 void main() {
   runApp(_initApp());
@@ -39,7 +42,7 @@ Widget ceInitGetMaterialApp({
     themeMode: ThemeMode.light,
     fallbackLocale: const Locale("en", "US"),
     debugShowCheckedModeBanner: false,
-    initialRoute: '/root-page',
+    initialRoute: '/',
     getPages: Pages,
     defaultTransition: Transition.rightToLeft,
     theme: ThemeData(
@@ -107,6 +110,11 @@ _initApp() {
 
 List<GetPage<dynamic>> Pages = [
   GetPage(
+    name: '/',
+    page: () => const ToyResultView(),
+    binding: ToyResultBinding(),
+  ),
+  GetPage(
     name: '/home',
     page: () => const HomeView(),
     binding: HomeBinding(),
@@ -120,6 +128,10 @@ List<GetPage<dynamic>> Pages = [
     name: '/plan-page',
     page: () => const PlanPageView(),
     binding: PlanPageBinding(),
+  ),
+  GetPage(
+    name: '/app-cauas',
+    page: () => const AppCauas(),
   ),
   GetPage(
     name: '/mine-page',

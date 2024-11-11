@@ -24,7 +24,7 @@ class AppCauas extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.bfkcir.value)),
+              url: WebUri.uri(Uri.parse(controller.nymgzows.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;
